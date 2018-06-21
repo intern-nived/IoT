@@ -2,10 +2,11 @@ var express = require('express');
 var app = express();
 var http = require('http');	
 var server = http.createServer(app);
-xx
+
 app.get('/test', function(req,res){
     var iothub = require('azure-iothub');
-    var iothubEndPoint = "HostName=devicesimulation.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jpulxh92A7OP57+fmwTzUXjn7C5MPLHiM4HrX6GjsyQ=";
+    var onResults = function (err, results) {
+    var iothubEndPoint = "HostName=iotipdevSimulation.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=bqWoWm43eXCmP2b/A5VPvBk/hjTzWHQHmlNP2Xg081E=";
     var responseToSend = 0;
     var registry = iothub.Registry.fromConnectionString(iothubEndPoint);
     var query = registry.createQuery("SELECT * FROM devices", 100);
@@ -29,6 +30,7 @@ app.get('/test', function(req,res){
         res.json(resTosend);
     };
     query.nextAsTwin(onResults);
+    }; 
 });
 
 server.listen(8080);

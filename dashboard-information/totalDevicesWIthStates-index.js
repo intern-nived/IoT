@@ -5,7 +5,7 @@ var server = http.createServer(app);
 
 app.get('/test', function(req,res){
     var iothub = require('azure-iothub');
-    var iothubEndPoint = "HostName=devicesimulation.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jpulxh92A7OP57+fmwTzUXjn7C5MPLHiM4HrX6GjsyQ=";
+    var iothubEndPoint = "HostName=iotipdevSimulation.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=bqWoWm43eXCmP2b/A5VPvBk/hjTzWHQHmlNP2Xg081E=";
 
         var numberOfInactiveDevices = 0;
         var numberOfDevices = 0;
@@ -53,7 +53,7 @@ app.get('/test', function(req,res){
                 status: 200, /* Defaults to 200 */
                 body: JSON.stringify(obj)
             };
-            query.nextAsTwin(onResults);
+            res.json(resTosend);
         }
 });
 

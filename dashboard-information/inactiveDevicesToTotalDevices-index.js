@@ -53,7 +53,7 @@ app.get('/test', function(req,res){
             res.json(resTosend);
         }
 
-    var iothub = require('azure-iothub');
+    //var iothub = require('azure-iothub');
     var iothubEndPoint = "HostName=iotipdevSimulation.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=bqWoWm43eXCmP2b/A5VPvBk/hjTzWHQHmlNP2Xg081E=";
         var numberOfActiveDevices = 0;
         var numberOfInactiveDevices = 0;
